@@ -14,7 +14,7 @@ Terraform requires the following variables to have values before you can plan an
 
 **Costs will be incurred while the instance is running - anywhere from $0.16 - $0.22 USD/hour depending on region for `t3.xlarge` at time of writing**. Deploying this infrastructure will result in a running instance.</br>Ensure you [stop the instance](./park.md) when not in use.
 
-The deployment will determine the public-facing IP address of the workstation - or more specifically the external router that your worstation sits behind - you run the infrastructure deployment from (which is assumed to be the workstation you will use to connect to the instance), and will create a security group on the instance that permits ingress to only that address on all ports.
+The deployment will determine the public-facing IP address of the workstation - or more specifically the external router that your workstation sits behind - you run the infrastructure deployment from (which is assumed to be the workstation you will use to connect to the instance), and will create a security group on the instance that permits ingress to only that address on all ports.
 
 Change into the `terraform` directory and run
 
