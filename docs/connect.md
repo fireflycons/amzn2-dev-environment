@@ -13,7 +13,8 @@ Note that you *can* connect vnc viewer directly to the instance on port 5901 wit
 ![privatekey](./connect5.gif)
 1. Press **Open** button at the bottom. This should establish a terminal session with the instance, and at the same time set up the tunnel for VNC
 1. Run the Tiger VNC client. Enter `localhost:5901` in the **VNC Server** field, then press connect
-![tiget](./connect7.gif)
+![tiger](./connect7.gif)
+1. The password box will pop up. Enter the VNC password you provided to packer. It will warn you that it's not secured, but it doesn't know it's being routed via an SSH tunnel.
 1. If you're using a Route53 DNS record, and entered the hostname in step 3 above, then you should save the PuTTY session for reuse.
 
 * [Next](./park.md) - Parking/Reusing your instance
