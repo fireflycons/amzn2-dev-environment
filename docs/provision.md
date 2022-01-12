@@ -16,8 +16,6 @@ Terraform requires the following variables to have values before you can plan an
 
 The deployment will determine the public-facing IP address of the workstation you run the infrastructure deployment from (which is assumed to be the workstation you will use to connect to the instance), and will create a security group on the instance that permits ingress to only that address (on all ports).
 
-TODO - Domain assignment
-
 Change into the `terraform` directory and run
 
 ```
