@@ -1,0 +1,63 @@
+{
+    "variables": {
+        "linux_username": null,
+        "linux_password": null,
+        "vnc_password": null,
+        "ssh_public_key": null
+    },
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "region": "eu-west-1",
+            "source_ami_filter": {
+                "filters": {
+                    "virtualization-type": "hvm",
+                    "name": "amzn2-ami-*",
+                    "root-device-type": "ebs",
+                    "architecture": "x86_64"
+                },
+                "owners": [
+                    "amazon"
+                ],
+                "most_recent": true
+            },
+            "instance_type": "t3.micro",
+            "launch_block_device_mappings": [
+                {
+                    "device_name": "/dev/xvda",
+                    "volume_size": 15,
+                    "volume_type": "gp3",
+                    "delete_on_termination": true
+                }
+            ],
+            "ssh_username": "ec2-user",
+            "ami_name": "amzn2-devenv-{{isotime `2006-01-02_15-04-05`}}",
+            "ami_description": "amzn2 dev with docker,minikube",
+            "tags": {
+                "Name": "amzn2-devenv-{{isotime `2006-01-02_15-04-05`}}"
+            },
+            "snapshot_tags": {
+                "Name": "amzn2-devenv-{{isotime `2006-01-02_15-04-05`}}"
+            },
+            "run_tags": {
+                "Name": "amzn2-devenv-{{isotime `2006-01-02_15-04-05`}}"
+            }
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "{{user `ssh_public_key`}}",
+            "destination": "/tmp/id_rsa.pub"
+        },
+        {
+            "type": "shell",
+            "environment_vars": [
+                "LINUX_USERNAME={{user `linux_username`}}",
+                "LINUX_PASSWORD={{user `linux_password`}}",
+                "VNC_PASSWORD={{user `vnc_password`}}"
+            ],
+            "script": "./provision.sh"
+        }
+    ]
+}

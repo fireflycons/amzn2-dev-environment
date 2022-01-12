@@ -1,0 +1,7 @@
+.vscode/
+auth/
+packer/vars.json
+terraform/terraform.tfvars
+terraform/.terraform*
+terraform/terraform.tfstate*
+notes.txt
