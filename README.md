@@ -30,7 +30,7 @@ All of the above software can be installed using [chocolatey](https://chocolatey
 choco install packer terraform putty tigervnc-viewer -y
 ```
 
-Ideally have a hosted zone in Route53 so that Terraform can automatically assign an DNS record to the instance.
+Ideally have a hosted zone in Route53 so that Terraform can automatically assign a DNS record to the instance.
 
 Follow this guide to get up and running
 
