@@ -20,7 +20,7 @@ It's much easier to put the your own values for these variables into a `vars.jso
 }
 ```
 
-Now examine [provision.sh](./packer/provision.sh) and add in, modify or remove developer tools. The default in this repository installs the following:
+Now examine [provision.sh](../packer/provision.sh) and add in, modify or remove developer tools. The default in this repository installs the following:
 
 * Visual Studio Code
 * Chromium browser
@@ -39,4 +39,5 @@ Change into the `packer` directory and build the AMI as follows
 packer build -var-file vars.json devenv.json
 ```
 
-**Next**: [Provision Infrastructure](./provision.md)
+* [Next](./provision.md) - Provision Infrastructure
+* [Back](./keypair.md) - Generate Key Pair

@@ -12,4 +12,4 @@ How to create a key pair for your instance using PuTTYgen
 ![Generate](./kp3.gif)
 
 
-**Next**: [Build the AMI](./ami.md)
+* [Next](./ami.md) - Build the AMI
