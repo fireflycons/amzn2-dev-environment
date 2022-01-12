@@ -22,6 +22,7 @@ Change into the `terraform` directory and run
 terraform plan
 ```
 
+If you've built the AMI more than once, Terraform will select the latest version of it, redeploying the instance if it has been updated - ensure you copied anything you want to save off the instance!</br>
 If all is good, then run
 
 ```
