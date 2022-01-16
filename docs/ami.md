@@ -25,7 +25,9 @@ Now examine [provision.sh](../packer/provision.sh) and add in, modify or remove 
 * Visual Studio Code
 * Chromium browser
 * Docker
+* git
 * Minikube and kubectl
+* GoLang 1.17.6
 * Python 3.8 + devel
 * gcc compiler suite and associated tooling
 * Java JDK 17 (JAVA_HOME etc. will need configuring when you start the environment)

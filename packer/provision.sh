@@ -29,8 +29,8 @@ sudo yum upgrade -y
 
 # Set up repos
 sudo amazon-linux-extras enable python3.8
-# Install basic toolset inc. docket
-sudo yum install wget nano docker telnet -y
+# Install basic toolset inc. docker, git
+sudo yum install wget nano docker telnet git tar -y
 
 # Set up user account and enable SSH
 write_heading "Provisioning user '$LINUX_USERNAME'"
@@ -102,6 +102,16 @@ rm -f minikube
 rm -f kubectl
 
 write_heading "Installing Dev Languages"
+
+# Golang - Manual install as yum often lags behind
+_go_version=1.17.6
+curl -Lo golang.tar.gz "https://go.dev/dl/go$_go_version.linux-amd64.tar.gz"
+sudo tar -C /usr/lib -xzf golang.tar.gz
+pushd /usr/bin
+sudo ln -s /usr/lib/go/bin/go go
+sudo ln -s /usr/lib/go/bin/gofmt gofmt
+popd
+rm -f golang.tar.gz
 
 # Python 3
 sudo yum install python38 -y
