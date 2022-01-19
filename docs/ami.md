@@ -26,6 +26,7 @@ Now examine [provision.sh](../packer/provision.sh) and add in, modify or remove 
 * Chromium browser
 * Docker
 * git
+* aws-cli
 * Minikube and kubectl
 * GoLang 1.17.6
 * Python 3.8 + devel

@@ -29,8 +29,8 @@ sudo yum upgrade -y
 
 # Set up repos
 sudo amazon-linux-extras enable python3.8
-# Install basic toolset inc. docker, git
-sudo yum install wget nano docker telnet git tar -y
+# Install basic toolset inc. docker, git, aws
+sudo yum install wget nano docker telnet git tar aws-cli -y
 
 # Set up user account and enable SSH
 write_heading "Provisioning user '$LINUX_USERNAME'"

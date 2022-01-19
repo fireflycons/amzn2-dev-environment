@@ -20,6 +20,6 @@ data "aws_ami" "devenv_ami" {
 # Gets zone ID for given domain, if domain was specified
 data "aws_route53_zone" "my_zone" {
   count = var.domain_name == "" ? 0 : 1
-  name  = "${var.domain_name}"
+  name  = var.domain_name
 }
 

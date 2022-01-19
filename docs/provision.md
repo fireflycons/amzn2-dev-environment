@@ -10,7 +10,9 @@ Terraform requires the following variables to have values before you can plan an
 | subnet_id | Yes |ID of a public subnet within the above VPC to which the instance will be attached |
 | instance_type | Yes | AWS instance type to deploy. `t3.xlarge` is a reasonable choice with 4CPU and 16GB |
 | domain_name | No | Name of a domain you have hosted on Route53 (e.g. `example.com`) |
-| host_name | Conditional | If `domain_name` is provided, this is the name of the host record (A) to create in Route53
+| host_name | Conditional | If `domain_name` is provided, this is the name of the host record (A) to create in Route53 |
+| notification_email | No | If set, enable idle shutdown alarm (30 min inactivity) and notify this address on shutdown |
+| environment_name | No | This name is added to `Name` tag of all resources. Default = `MATE Devenv` |
 
 **Costs will be incurred while the instance is running - anywhere from $0.16 - $0.22 USD/hour depending on region for `t3.xlarge` at time of writing**. Deploying this infrastructure will result in a running instance.</br>Ensure you [stop the instance](./park.md) when not in use.
 

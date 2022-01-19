@@ -38,3 +38,14 @@ variable "environment_name" {
   type        = string
   default     = "MATE devenv"
 }
+
+variable "notification_email" {
+  description = "Email address to send environment shutdown messages to. Omit to not create an auto-shutdown alarm"
+  type        = string
+  default     = ""
+}
+
+locals {
+  topic_name = "${replace(lower(var.environment_name), " ", "-")}-idle-shutdown"
+  alarm_name = "${replace(lower(var.environment_name), " ", "-")}-idle"
+}
