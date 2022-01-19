@@ -7,7 +7,7 @@ Using packer, we create an AMI which will be an image of the entire environment.
 | linux_username | Username of linux user to create for yourself |
 | linux_password | Password for the above user |
 | vnc_password | Password to connect to VNC server (see below) |
-| ssh_public_key | Path to public key file for the keypair you will create to access the system (see above) |
+| ssh_public_key | Path to public key file for the [keypair](./keypair.md) you created to access the system |
 
 It's much easier to put the your own values for these variables into a `vars.json` file in the `packer` directory, like this
 
