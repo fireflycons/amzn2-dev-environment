@@ -2,6 +2,8 @@
 
 To prevent running up an AWS bill, you should stop the instance when you are not using it. When you restart it, AWS will assign it a new public IP address.
 
+If you enabled the auto-stop feature by providing a notification email to terraform, then the instance will auto-stop after 30 min of inactivity, defined as CPU average < 3% for 30 one minute samples.
+
 If you created a DNS entry in Route53 for the instance, then bringing it back up requires the following steps
 
 1. Start the instance
