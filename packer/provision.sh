@@ -104,7 +104,7 @@ rm -f kubectl
 write_heading "Installing Dev Languages"
 
 # Golang - Manual install as yum often lags behind
-_go_version=1.17.6
+_go_version=$(curl -L "https://golang.org/VERSION?m=text")
 curl -Lo golang.tar.gz "https://go.dev/dl/go$_go_version.linux-amd64.tar.gz"
 sudo tar -C /usr/lib -xzf golang.tar.gz
 pushd /usr/bin
@@ -122,18 +122,20 @@ popd
 
 # C/C++/Make/AutoConf etc. and Python devel
 sudo yum groupinstall "Development Tools" -y
-sudo yum install cmake python38-devel  -y
+#sudo yum install cmake python38-devel  -y
 
 # Java
-wget --no-verbose --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
-sudo rpm -Uvh jdk-17_linux-x64_bin.rpm
-rm -f jdk-17_linux-x64_bin.rpm
+#wget --no-verbose --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
+#sudo rpm -Uvh jdk-17_linux-x64_bin.rpm
+#rm -f jdk-17_linux-x64_bin.rpm
 
 # NodeJS
 curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
 sudo yum install -y nodejs
 
 # DotNet Core and PowerShell
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-sudo yum install powershell dotnet-sdk-3.1 -y
+#sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+#curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
+#sudo yum install powershell dotnet-sdk-3.1 -y
+
+
